@@ -81,14 +81,107 @@ footer {
 
 <section class="bg-primary text-white text-center py-5 h-100 min-vh-100 d-flex align-items-center">
     <div class="container">
-        <img class="img-fluid mb-3" style="width: 15%;" src="./assets/emblem.svg" alt="logo">
-        <h1 class="lead ">STRATEGIUM</h1>
+        <img class="img-fluid mb-3" style="width: 55%;" src="./assets/logo2.svg" alt="logo">
 
         <div class="d-flex flex-column gap-3 justify-content-center align-items-center mt-4">
             <a href="TheForge.html" class="btn btn-outline-light btn-lg px-4 w-50">Создать ростер</a>
             <a href="TheForge.html" class="btn btn-outline-light btn-lg px-4 w-50">Быстрый страт</a>
             <a href="TheForge.html" class="btn btn-outline-light btn-lg px-4 w-50">Загрузить свой список</a>
             <a href="Rules.html" class="btn btn-outline-light btn-lg px-4 w-50">Основные правила</a>
+            <button type="button" class="btn btn-outline-light btn-lg px-4 w-50" data-bs-toggle="modal" data-bs-target="#registerModal"><i class="bi bi-person-plus"></i> Зарегистрироваться</button>
+
+            <div class="modal fade" id="registerModal" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header bg-success text-white">
+                            <h5 class="modal-title">
+                                <i class="bi bi-person-badge"></i> Регистрация нового пользователя
+                            </h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="registerForm">
+
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">
+                                        <i class="bi bi-person"></i> Имя пользователя
+                                    </label>
+                                    <input type="text" class="form-control" id="username" placeholder="Придумайте имя">
+                                    <div class="invalid-feedback" id="usernameError"></div>
+                                    <small class="text-muted">Минимум 3 символа</small>
+                                </div>
+                                
+
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">
+                                        <i class="bi bi-envelope"></i> Email
+                                    </label>
+                                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                                    <div class="invalid-feedback" id="emailError"></div>
+                                </div>
+                                
+
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">
+                                        <i class="bi bi-lock"></i> Пароль
+                                    </label>
+                                    <input type="password" class="form-control" id="password" placeholder="Придумайте пароль">
+                                    <div class="invalid-feedback" id="passwordError"></div>
+                                    <small class="text-muted">Минимум 6 символов</small>
+                                </div>
+                                
+
+                                <div class="mb-3">
+                                    <label for="confirmPassword" class="form-label">
+                                        <i class="bi bi-lock-fill"></i> Подтверждение пароля
+                                    </label>
+                                    <input type="password" class="form-control" id="confirmPassword" placeholder="Повторите пароль">
+                                    <div class="invalid-feedback" id="confirmPasswordError"></div>
+                                </div>
+                                
+
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="agreeTerms">
+                                    <label class="form-check-label" for="agreeTerms">
+                                        Я согласен с <a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">условиями использования</a>
+                                    </label>
+                                    <div class="invalid-feedback" id="agreeError"></div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                <i class="bi bi-x"></i> Отмена
+                            </button>
+                            <button type="button" class="btn btn-success" id="registerBtn">
+                                <i class="bi bi-check-circle"></i> Зарегистрироваться
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="termsModal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header bg-info text-white">
+                            <h5 class="modal-title">Условия использования</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h6>1. Общие положения</h6>
+                            <p>Регистрируясь, вы соглашаетесь на обработку персональных данных.</p>
+                            <h6>2. Обязательства пользователя</h6>
+                            <p>Вы обязуетесь предоставлять достоверную информацию и не передавать свои данные третьим лицам.</p>
+                            <h6>3. Заключительные положения</h6>
+                            <p>Администрация оставляет за собой право изменять условия использования.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Понятно</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -157,5 +250,10 @@ footer {
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="./scripts/scripts.js"></script>
+<script src="./scripts/main.js"></script>
+<script src="./scripts/logger.js"></script>
+<script src="./scripts/validation.js"></script>
+
 </body>
 </html>
